@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<script>
+// reads a string, swaps adjacent letters with 50% likelihood
+// irreversible
+str='Just some random text that is about to be encrypted';
+function go() {
+crypt.textContent=str;
+}
+function code() {
+sa=str.split('');
+for (i=0;i<sa.length-1;i++) if (Math.random()<0.5) {t=sa[i];sa[i]=sa[i+1];sa[i+1]=t;}
+crypt.textContent=sa.join('');
+}
+</script>
+<body onload='go();'>
+<span style='background-color:red;width:100pt' id='crypt'></span>
+<button onclick='code();'>Code</button>
+</body>
+</html>
